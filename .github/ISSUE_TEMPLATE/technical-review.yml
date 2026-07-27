@@ -1,0 +1,65 @@
+name: Technical review
+description: Report a bounded manuscript, method, protocol, or claim-boundary finding.
+title: "[Review] "
+labels:
+  - review
+body:
+  - type: markdown
+    attributes:
+      value: "Thank you for testing this release candidate. A review is criticism, not endorsement."
+  - type: dropdown
+    id: lane
+    attributes:
+      label: Review lane
+      options:
+        - Method and claim boundary
+        - Adversarial and negative testing
+        - Reproducibility and provenance
+        - Human approval and authority boundary
+        - Statistical design
+    validations:
+      required: true
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      options:
+        - Blocking
+        - Major
+        - Minor
+        - Editorial
+    validations:
+      required: true
+  - type: textarea
+    id: location
+    attributes:
+      label: Location or artifact
+      description: Identify the section, file, case, or protocol element.
+    validations:
+      required: true
+  - type: textarea
+    id: finding
+    attributes:
+      label: Finding and claim at risk
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence or reproduction steps
+    validations:
+      required: true
+  - type: textarea
+    id: disposition
+    attributes:
+      label: Recommended disposition
+    validations:
+      required: true
+  - type: textarea
+    id: conflicts
+    attributes:
+      label: Conflict disclosure
+      description: State relevant conflicts or write "None known."
+    validations:
+      required: true
+

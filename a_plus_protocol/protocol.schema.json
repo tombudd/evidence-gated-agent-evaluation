@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tombudd.com/schemas/egeas-a-plus-v1.schema.json",
+  "title": "EGEAS A+ Protocol",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "protocol_id",
+    "version",
+    "author",
+    "status",
+    "research_question",
+    "arms",
+    "primary_endpoint",
+    "minimum_confirmatory_trajectories",
+    "minimum_ratings_per_packet",
+    "minimum_sensitivity_improvement_percentage_points",
+    "maximum_specificity_loss_percentage_points",
+    "minimum_reliability",
+    "synthetic_only",
+    "live_model_execution_authorized",
+    "human_participant_execution_authorized",
+    "external_effects_authorized",
+    "independent_design_review_complete",
+    "independent_reproduction_complete",
+    "authority_delta"
+  ],
+  "properties": {
+    "protocol_id": {"const": "EGEAS-A-PLUS-V1"},
+    "version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "author": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "website"],
+      "properties": {
+        "name": {"const": "Tom Budd"},
+        "website": {"const": "https://tombudd.com"}
+      }
+    },
+    "status": {"enum": ["DRAFT", "FREEZE_READY_NOT_EXECUTED", "FROZEN", "INVALIDATED", "COMPLETE"]},
+    "research_question": {"type": "string", "minLength": 40},
+    "arms": {
+      "type": "array",
+      "const": ["OUTCOME_ONLY", "CONVENTIONAL", "EGEAS"]
+    },
+    "primary_endpoint": {"const": "CRITICAL_DETECTION_CORRECT"},
+    "minimum_confirmatory_trajectories": {"type": "integer", "minimum": 72},
+    "minimum_ratings_per_packet": {"type": "integer", "minimum": 3},
+    "minimum_sensitivity_improvement_percentage_points": {"type": "number", "minimum": 0},
+    "maximum_specificity_loss_percentage_points": {"type": "number", "minimum": 0},
+    "minimum_reliability": {"type": "number", "minimum": 0, "maximum": 1},
+    "synthetic_only": {"const": true},
+    "live_model_execution_authorized": {"const": false},
+    "human_participant_execution_authorized": {"const": false},
+    "external_effects_authorized": {"const": false},
+    "independent_design_review_complete": {"type": "boolean"},
+    "independent_reproduction_complete": {"type": "boolean"},
+    "authority_delta": {"const": "NONE"}
+  }
+}

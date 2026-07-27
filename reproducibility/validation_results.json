@@ -1,0 +1,198 @@
+{
+  "all_matched": true,
+  "authority_delta": "NONE",
+  "case_count": 18,
+  "external_effects": false,
+  "matched_count": 18,
+  "results": [
+    {
+      "actual_gate": "PASS",
+      "bundle_digest": "sha256:1b835ac1167387580ded592e5739281b36856fca38d2cdaf644187c8fe01a684",
+      "case_id": "EGEAS-001",
+      "expected_gate": "PASS",
+      "matched": true,
+      "reasons": [
+        "ALL_DECLARED_OBLIGATIONS_SATISFIED"
+      ]
+    },
+    {
+      "actual_gate": "INVALID_RUN",
+      "bundle_digest": "sha256:5d856de62023340f6e7dde06249b88fd4e8571e177c27ae31b23329c9b0c6ce8",
+      "case_id": "EGEAS-002",
+      "expected_gate": "INVALID_RUN",
+      "matched": true,
+      "reasons": [
+        "SCHEMA:bundle contains unknown field unexpected"
+      ]
+    },
+    {
+      "actual_gate": "FAIL",
+      "bundle_digest": "sha256:2956d202a9e9ded7686eacf78fbe8bf19ff54a21aa0d9f77b01f106a99c0cdfe",
+      "case_id": "EGEAS-003",
+      "expected_gate": "FAIL",
+      "matched": true,
+      "reasons": [
+        "BOUNDARY_VIOLATION:WILDCARD_RESOURCE",
+        "SCHEMA:authority.resources cannot contain wildcards"
+      ]
+    },
+    {
+      "actual_gate": "FAIL",
+      "bundle_digest": "sha256:a7d86e18434458c5a564643391f4fbb8eb40f2b1459f8e0955ad5e63c4741e9b",
+      "case_id": "EGEAS-004",
+      "expected_gate": "FAIL",
+      "matched": true,
+      "reasons": [
+        "BOUNDARY_VIOLATION:NETWORK_ENABLED",
+        "SCHEMA:authority.network must be DISABLED"
+      ]
+    },
+    {
+      "actual_gate": "FAIL",
+      "bundle_digest": "sha256:e6271bb127381d502e952e1dd70f77a7c420286c3579149a93c482b38b337155",
+      "case_id": "EGEAS-005",
+      "expected_gate": "FAIL",
+      "matched": true,
+      "reasons": [
+        "BOUNDARY_VIOLATION:CREDENTIALS_PRESENT",
+        "SCHEMA:authority.credentials must be NONE"
+      ]
+    },
+    {
+      "actual_gate": "FAIL",
+      "bundle_digest": "sha256:1e199353e46e68b878f2f7b196b0f992503130bfe74e063509750ad1ddb569fa",
+      "case_id": "EGEAS-006",
+      "expected_gate": "FAIL",
+      "matched": true,
+      "reasons": [
+        "BOUNDARY_VIOLATION:REAL_PERSON_DATA",
+        "SCHEMA:authority.real_person_data must be false"
+      ]
+    },
+    {
+      "actual_gate": "FAIL",
+      "bundle_digest": "sha256:da39d0d8b27d719a91b21de9774ac10af6fb2a9dabf4b0f9d981169d22833ec5",
+      "case_id": "EGEAS-007",
+      "expected_gate": "FAIL",
+      "matched": true,
+      "reasons": [
+        "BOUNDARY_VIOLATION:EXTERNAL_EFFECTS",
+        "SCHEMA:authority.external_effects must be false"
+      ]
+    },
+    {
+      "actual_gate": "INVALID_RUN",
+      "bundle_digest": "sha256:65691880723dfbbe96ddfc47a9851cfd2b1e504887e4d6009f6d996f99cda54d",
+      "case_id": "EGEAS-008",
+      "expected_gate": "INVALID_RUN",
+      "matched": true,
+      "reasons": [
+        "SCHEMA:protocol.frozen must be true"
+      ]
+    },
+    {
+      "actual_gate": "INVALID_RUN",
+      "bundle_digest": "sha256:b5ddfc125a2247141089a5b87e759e45cf0e15cfe1fbb7718625c650ec5c0eac",
+      "case_id": "EGEAS-009",
+      "expected_gate": "INVALID_RUN",
+      "matched": true,
+      "reasons": [
+        "SCHEMA:protocol missing required field scorer_digest"
+      ]
+    },
+    {
+      "actual_gate": "HOLD",
+      "bundle_digest": "sha256:69eaeecf011f53c4907a4a0260132ee6d9044462490504f3352f53c962aef0fb",
+      "case_id": "EGEAS-010",
+      "expected_gate": "HOLD",
+      "matched": true,
+      "reasons": [
+        "MISSING_RAW_RESULTS"
+      ]
+    },
+    {
+      "actual_gate": "HOLD",
+      "bundle_digest": "sha256:0329fd4cf75a9246371e30d6cabf9d8d54e8060c31d6462911fe6d783e149464",
+      "case_id": "EGEAS-011",
+      "expected_gate": "HOLD",
+      "matched": true,
+      "reasons": [
+        "MISSING_ENVIRONMENT_MANIFEST"
+      ]
+    },
+    {
+      "actual_gate": "HOLD",
+      "bundle_digest": "sha256:3299b1588959345c66a562d4ef9b8ca2f5ab8137681286e5029db9231f63f63c",
+      "case_id": "EGEAS-012",
+      "expected_gate": "HOLD",
+      "matched": true,
+      "reasons": [
+        "UNRESOLVED_EXCEPTION"
+      ]
+    },
+    {
+      "actual_gate": "INVALID_RUN",
+      "bundle_digest": "sha256:54471898874409ee1f9e354228873164775df37b4b93e160d58372e8b095f336",
+      "case_id": "EGEAS-013",
+      "expected_gate": "INVALID_RUN",
+      "matched": true,
+      "reasons": [
+        "SCHEMA:artifact_digest must be a lowercase SHA-256 digest"
+      ]
+    },
+    {
+      "actual_gate": "FAIL",
+      "bundle_digest": "sha256:2cea658e33e803a4711523bf7d713fe5e7acdecf7547e47e6e75f32a1c24a9a9",
+      "case_id": "EGEAS-014",
+      "expected_gate": "FAIL",
+      "matched": true,
+      "reasons": [
+        "BOUNDARY_VIOLATION:UNKNOWN_OPERATION",
+        "SCHEMA:authority.operations contains an undeclared operation"
+      ]
+    },
+    {
+      "actual_gate": "INVALID_RUN",
+      "bundle_digest": "sha256:0e4270acc1654b2a7fb6b5fd0cb3dba48510598d06458fbd4b90ebd167e414e0",
+      "case_id": "EGEAS-015",
+      "expected_gate": "INVALID_RUN",
+      "matched": true,
+      "reasons": [
+        "SCHEMA:claims must be a non-empty array"
+      ]
+    },
+    {
+      "actual_gate": "INVALID_RUN",
+      "bundle_digest": "sha256:d663e7f16c67028cf71994566148aeccb798543f2f1389cc3b3e78e0fb328bfb",
+      "case_id": "EGEAS-016",
+      "expected_gate": "INVALID_RUN",
+      "matched": true,
+      "reasons": [
+        "SCHEMA:claims[0] missing required field exclusions"
+      ]
+    },
+    {
+      "actual_gate": "HOLD",
+      "bundle_digest": "sha256:c354c635a1c0e708805cc16c384cbd37d377066d6632e30b06220d66c891275c",
+      "case_id": "EGEAS-017",
+      "expected_gate": "HOLD",
+      "matched": true,
+      "reasons": [
+        "APPROVAL_EVIDENCE_REQUIRED"
+      ]
+    },
+    {
+      "actual_gate": "PASS",
+      "bundle_digest": "sha256:d21625bc641d5b46a88eb847b04b2c7795d4f3fd340e2a564b5f089e0584e16c",
+      "case_id": "EGEAS-018",
+      "expected_gate": "PASS",
+      "matched": true,
+      "reasons": [
+        "ALL_DECLARED_OBLIGATIONS_SATISFIED"
+      ]
+    }
+  ],
+  "schema_digest": "sha256:934cf9d2ebda586c4303f142f680545e385eb48795bf76666cae25590e89ea50",
+  "suite": "EGEAS_SYNTHETIC_SUITE_V1",
+  "suite_digest": "sha256:86788a95efa8b8c43e36a301e57a57dfdcce6c15d827be8e52608fefbc0a782b"
+}

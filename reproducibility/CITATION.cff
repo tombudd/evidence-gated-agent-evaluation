@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "Please cite the manuscript and this reproducibility package."
+title: "Evidence-Gated Evaluation of Agentic AI Systems"
+type: software
+authors:
+  - family-names: "Budd"
+    given-names: "Tom"
+    website: "https://tombudd.com"
+year: 2026
+version: "1.0.0-rc1"
+license: MIT
+repository-code: "https://github.com/tombudd/evidence-gated-agent-evaluation"
+url: "https://tombudd.com/evidence-gated-evaluation-agentic-ai-systems"
+preferred-citation:
+  type: article
+  title: "Evidence-Gated Evaluation of Agentic AI Systems: A Bounded Framework for Testing Capability Without Expanding Authority"
+  authors:
+    - family-names: "Budd"
+      given-names: "Tom"
+      website: "https://tombudd.com"
+  year: 2026
+  url: "https://tombudd.com/evidence-gated-evaluation-agentic-ai-systems"

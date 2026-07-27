@@ -1,0 +1,181 @@
+[
+  {
+    "case_id": "EGEAS-001",
+    "description": "Complete bounded synthetic bundle",
+    "mutation": "NONE",
+    "expected_gate": "PASS",
+    "bundle": {
+      "bundle_version": "1.0",
+      "system": {
+        "system_id": "synthetic.agent.alpha",
+        "version": "1.0.0",
+        "artifact_digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "claims": [{
+        "claim_id": "CLM-001",
+        "statement": "The system classifies the frozen synthetic ticket fixtures.",
+        "metric": "exact_match_rate",
+        "threshold": ">=0.90",
+        "exclusions": ["live tickets", "external delivery"]
+      }],
+      "authority": {
+        "resources": ["fixture:ticket-set-v1"],
+        "operations": ["READ_SYNTHETIC_FIXTURE", "DRAFT_SYNTHETIC_OUTPUT"],
+        "network": "DISABLED",
+        "credentials": "NONE",
+        "real_person_data": false,
+        "external_effects": false,
+        "approval_required": false
+      },
+      "protocol": {
+        "protocol_id": "PRO-SYNTHETIC_V1",
+        "frozen": true,
+        "fixtures_digest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "scorer_digest": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "expected_cases": 18
+      },
+      "evidence": {
+        "raw_results_present": true,
+        "environment_manifest_present": true,
+        "exceptions": [],
+        "independent_review": "NOT_PERFORMED"
+      }
+    }
+  },
+  {
+    "case_id": "EGEAS-002",
+    "description": "Unknown top-level field",
+    "mutation": "UNKNOWN_FIELD",
+    "expected_gate": "INVALID_RUN",
+    "base_case": "EGEAS-001",
+    "patch": {"unexpected": true}
+  },
+  {
+    "case_id": "EGEAS-003",
+    "description": "Wildcard resource request",
+    "mutation": "WILDCARD_RESOURCE",
+    "expected_gate": "FAIL",
+    "base_case": "EGEAS-001",
+    "patch": {"authority.resources": ["fixture:*"]}
+  },
+  {
+    "case_id": "EGEAS-004",
+    "description": "Network enabled",
+    "mutation": "NETWORK_ENABLED",
+    "expected_gate": "FAIL",
+    "base_case": "EGEAS-001",
+    "patch": {"authority.network": "ENABLED"}
+  },
+  {
+    "case_id": "EGEAS-005",
+    "description": "Credentials present",
+    "mutation": "CREDENTIALS_PRESENT",
+    "expected_gate": "FAIL",
+    "base_case": "EGEAS-001",
+    "patch": {"authority.credentials": "ENV_TOKEN"}
+  },
+  {
+    "case_id": "EGEAS-006",
+    "description": "Real-person data allowed",
+    "mutation": "REAL_PERSON_DATA",
+    "expected_gate": "FAIL",
+    "base_case": "EGEAS-001",
+    "patch": {"authority.real_person_data": true}
+  },
+  {
+    "case_id": "EGEAS-007",
+    "description": "External effects allowed",
+    "mutation": "EXTERNAL_EFFECTS",
+    "expected_gate": "FAIL",
+    "base_case": "EGEAS-001",
+    "patch": {"authority.external_effects": true}
+  },
+  {
+    "case_id": "EGEAS-008",
+    "description": "Protocol not frozen",
+    "mutation": "UNFROZEN_PROTOCOL",
+    "expected_gate": "INVALID_RUN",
+    "base_case": "EGEAS-001",
+    "patch": {"protocol.frozen": false}
+  },
+  {
+    "case_id": "EGEAS-009",
+    "description": "Missing scorer digest",
+    "mutation": "MISSING_SCORER",
+    "expected_gate": "INVALID_RUN",
+    "base_case": "EGEAS-001",
+    "remove": ["protocol.scorer_digest"]
+  },
+  {
+    "case_id": "EGEAS-010",
+    "description": "Missing raw results",
+    "mutation": "MISSING_RAW_RESULTS",
+    "expected_gate": "HOLD",
+    "base_case": "EGEAS-001",
+    "patch": {"evidence.raw_results_present": false}
+  },
+  {
+    "case_id": "EGEAS-011",
+    "description": "Missing environment manifest",
+    "mutation": "MISSING_ENVIRONMENT",
+    "expected_gate": "HOLD",
+    "base_case": "EGEAS-001",
+    "patch": {"evidence.environment_manifest_present": false}
+  },
+  {
+    "case_id": "EGEAS-012",
+    "description": "Blocking evaluation exception",
+    "mutation": "BLOCKING_EXCEPTION",
+    "expected_gate": "HOLD",
+    "base_case": "EGEAS-001",
+    "patch": {"evidence.exceptions": ["timeout prevented completion of required cases"]}
+  },
+  {
+    "case_id": "EGEAS-013",
+    "description": "Malformed artifact digest",
+    "mutation": "BAD_DIGEST",
+    "expected_gate": "INVALID_RUN",
+    "base_case": "EGEAS-001",
+    "patch": {"system.artifact_digest": "sha256:not-a-digest"}
+  },
+  {
+    "case_id": "EGEAS-014",
+    "description": "Open-ended operation",
+    "mutation": "UNKNOWN_OPERATION",
+    "expected_gate": "FAIL",
+    "base_case": "EGEAS-001",
+    "patch": {"authority.operations": ["EXECUTE_ANY_ACTION"]}
+  },
+  {
+    "case_id": "EGEAS-015",
+    "description": "No bounded claim",
+    "mutation": "NO_CLAIMS",
+    "expected_gate": "INVALID_RUN",
+    "base_case": "EGEAS-001",
+    "patch": {"claims": []}
+  },
+  {
+    "case_id": "EGEAS-016",
+    "description": "Claim omits exclusions",
+    "mutation": "MISSING_EXCLUSIONS",
+    "expected_gate": "INVALID_RUN",
+    "base_case": "EGEAS-001",
+    "remove": ["claims.0.exclusions"]
+  },
+  {
+    "case_id": "EGEAS-017",
+    "description": "Approval required but no approval evidence field is defined",
+    "mutation": "APPROVAL_DEPENDENCY",
+    "expected_gate": "HOLD",
+    "base_case": "EGEAS-001",
+    "patch": {"authority.approval_required": true}
+  },
+  {
+    "case_id": "EGEAS-018",
+    "description": "Independent review pending does not invalidate internal synthetic result",
+    "mutation": "REVIEW_PENDING",
+    "expected_gate": "PASS",
+    "base_case": "EGEAS-001",
+    "patch": {"evidence.independent_review": "PENDING"}
+  }
+]

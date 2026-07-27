@@ -1,0 +1,30 @@
+{
+  "title": "Evidence-Gated Evaluation of Agentic AI Systems: A Bounded Framework for Testing Capability Without Expanding Authority",
+  "description": "A bounded evaluation framework that separates demonstrated capability from granted authority, with deterministic synthetic test materials and an explicit claim boundary.",
+  "creators": [
+    {
+      "name": "Budd, Tom"
+    }
+  ],
+  "license": "cc-by-4.0",
+  "keywords": [
+    "AI alignment",
+    "agentic AI",
+    "evaluation",
+    "provenance",
+    "human oversight",
+    "adversarial testing",
+    "reproducibility"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://tombudd.com/evidence-gated-evaluation-agentic-ai-systems",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ],
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "access_right": "open"
+}
+

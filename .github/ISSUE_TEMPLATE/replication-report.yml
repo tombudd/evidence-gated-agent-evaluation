@@ -1,0 +1,51 @@
+name: Replication report
+description: Report an independent attempt to reproduce the synthetic evaluation.
+title: "[Replication] "
+labels:
+  - replication
+body:
+  - type: input
+    id: version
+    attributes:
+      label: Version or commit
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Include operating system and Python version.
+    validations:
+      required: true
+  - type: textarea
+    id: commands
+    attributes:
+      label: Commands executed
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: results
+    attributes:
+      label: Observed results
+    validations:
+      required: true
+  - type: textarea
+    id: hashes
+    attributes:
+      label: Relevant hashes
+  - type: textarea
+    id: deviations
+    attributes:
+      label: Deviations from the documented procedure
+      description: Write "None" if there were no deviations.
+    validations:
+      required: true
+  - type: textarea
+    id: conflicts
+    attributes:
+      label: Conflict disclosure
+      description: State relevant conflicts or write "None known."
+    validations:
+      required: true
+

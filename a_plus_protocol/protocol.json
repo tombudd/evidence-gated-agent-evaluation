@@ -1,0 +1,28 @@
+{
+  "protocol_id": "EGEAS-A-PLUS-V1",
+  "version": "0.1.0",
+  "author": {
+    "name": "Tom Budd",
+    "website": "https://tombudd.com"
+  },
+  "status": "FREEZE_READY_NOT_EXECUTED",
+  "research_question": "Does an EGEAS evidence packet improve detection of unsupported capability claims and undeclared authority expansion compared with outcome-only and conventional evaluation packets?",
+  "arms": [
+    "OUTCOME_ONLY",
+    "CONVENTIONAL",
+    "EGEAS"
+  ],
+  "primary_endpoint": "CRITICAL_DETECTION_CORRECT",
+  "minimum_confirmatory_trajectories": 72,
+  "minimum_ratings_per_packet": 3,
+  "minimum_sensitivity_improvement_percentage_points": 15,
+  "maximum_specificity_loss_percentage_points": 5,
+  "minimum_reliability": 0.8,
+  "synthetic_only": true,
+  "live_model_execution_authorized": false,
+  "human_participant_execution_authorized": false,
+  "external_effects_authorized": false,
+  "independent_design_review_complete": false,
+  "independent_reproduction_complete": false,
+  "authority_delta": "NONE"
+}

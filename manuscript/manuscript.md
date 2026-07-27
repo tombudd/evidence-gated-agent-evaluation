@@ -569,7 +569,7 @@ The framework's strongest claim is deliberately modest: evaluation evidence shou
 
 ## Data and Code Availability
 
-The release candidate includes the manuscript source, a JSON Schema, 18 synthetic cases, a deterministic Python validator, regression tests, generated results, and SHA-256 manifests. No private or personal research data are used. A permanent repository URL and DOI will be added after external publication is separately authorized and completed.
+The release candidate includes the manuscript source, a JSON Schema, 18 synthetic cases, a deterministic Python validator, regression tests, generated results, and SHA-256 manifests. No private or personal research data are used. Public materials: https://github.com/tombudd/evidence-gated-agent-evaluation. DOI: not assigned.
 
 ## Ethics and Safety Statement
 

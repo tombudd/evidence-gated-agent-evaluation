@@ -8,4 +8,5 @@
   replication materials.
 - Added structured GitHub issue forms.
 - Prepared Zenodo metadata without claiming or assigning a DOI.
-
+- Linked the manuscript and publication metadata to the public source and
+  reproducibility repository.

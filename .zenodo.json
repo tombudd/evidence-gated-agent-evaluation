@@ -21,10 +21,14 @@
       "identifier": "https://tombudd.com/evidence-gated-evaluation-agentic-ai-systems",
       "relation": "isSupplementTo",
       "scheme": "url"
+    },
+    {
+      "identifier": "https://github.com/tombudd/evidence-gated-agent-evaluation",
+      "relation": "isIdenticalTo",
+      "scheme": "url"
     }
   ],
   "upload_type": "publication",
   "publication_type": "preprint",
   "access_right": "open"
 }
-
